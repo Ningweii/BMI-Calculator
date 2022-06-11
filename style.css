@@ -1,0 +1,201 @@
+body{
+    background-color: blueviolet;
+    margin: 0px; 
+    padding: 0px;
+}
+#grid-container{
+    display: inline-grid;
+    height: 100vh;
+    width: 100vw;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: .5fr 1.2fr 1fr .8fr;
+    grid-template-areas: "header header header"
+                         "sidebar main main"
+                         "sidebar content-1 content-2"
+                         "sidebar footer footer";
+}
+#header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    grid-area: header;
+    background-color: rgb(131, 95, 164);
+}
+h1{
+    text-shadow: 5px 5px 10px red;
+    opacity: 0;
+    text-align: center;
+    word-spacing: 10px;
+    letter-spacing: 0.4em;
+    color: white;
+    
+    font-size: 2em; 
+    animation: h1_animation;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes h1_animation{
+    100%{opacity: 1;}
+    100%{letter-spacing: 0.2em;}
+    100%{color: black}
+}
+img{
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    left: 4rem;
+    animation: img_animation;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+img:hover{
+    transform: scale(1.1, 1.1);
+}
+@keyframes img_animation{
+    50%{transform: translate(10rem, 0rem) rotateZ(360deg);}
+    
+    
+}
+#sidebar{
+    grid-area: sidebar;
+    background-color: rgb(168, 94, 237);
+    display: flex;
+    flex-direction: column;
+}
+#sidebar:hover{
+    box-shadow: 0px 0px 10px white;
+}
+main{
+    grid-area: main;
+    background-color: rgb(182, 9, 182);
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 1em;
+}
+main:hover{
+    box-shadow: 0px 0px 10px white;
+}
+#bmiResultInfo{
+    text-shadow: 0px 0px 10px white;
+    font-style: italic;
+
+}
+#content-1{
+    grid-area: content-1;
+    background-color: rgb(142, 155, 166);
+    background-image: url(https://static.dw.com/image/61439975_303.jpg);
+    background-size: cover;
+    color: white;
+    text-shadow: 0px 0px 10px red;
+    font-weight: bold;
+    font-size: 1.4rem;
+    padding: .8em;
+}
+#content-1:hover{
+    box-shadow: 0px 0px 10px white;
+}
+
+#content-2{
+    grid-area: content-2;
+    background-color: bisque;
+    background-image: url(https://ec.europa.eu/research-and-innovation/sites/default/files/hm/field/image/Mars.jpg);
+    background-size: cover;
+    color: white;
+    text-shadow: 0px 0px 10px red;
+    font-weight: bold;
+    font-size: 1.4rem;
+    padding: .8em;
+}
+#content-2:hover{
+    box-shadow: 0px 0px 10px white;
+}
+footer{
+    grid-area: footer;
+    background-color: rgb(54, 54, 105);
+}
+footer:hover{
+    box-shadow: 0px 0px 10px white;
+    
+}
+article{
+    color: antiquewhite;
+    text-shadow: antiquewhite 0px 0px 10px;
+}
+
+.grid-item{
+    border-radius: 5px;
+}
+
+#bmi-calculator{
+    display: flex;
+    margin-top: 10vh;
+    flex-direction: column;
+    text-align: center;
+    line-height: .5em;
+    transform: scale(1.2, 1.2);
+}
+
+tr:hover{
+    transform: scale(1.05, 1.05);
+    background-color: gray; 
+}
+
+td{
+    border: 1px solid black;
+    line-height: normal;
+    border-radius: 5px;
+}
+table{
+    margin-top: 3rem;
+    margin-left: 3vw;
+    text-align: center;
+    font-size: large;
+    width: fit-content;
+
+}
+button,
+input{
+    width: 10rem;
+    align-self: center;
+    border-radius: 5px;
+}
+button{
+    background-color: bisque;
+}
+button:hover{
+    background-color: rgb(199, 178, 152);
+}
+button:active{
+    transform: scale(.95, .95);
+}
+#bmi-info{
+    font-size: larger;
+    padding: .8em;
+    font-style: italic;
+}
+
+
+@media only screen and (max-width: 600px){
+    #grid-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-areas: "header"
+                             "sidebar"
+                             "main"
+                             "content-1"
+                             "content-2"
+                             "footer"
+    }
+    img{
+        display: none;
+    }
+    table{
+        align-self: center;
+    }
+    h1{
+        font-size: larger;
+    }
+}

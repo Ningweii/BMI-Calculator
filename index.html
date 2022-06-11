@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="img/png" href="https://cdn-icons-png.flaticon.com/512/4349/4349071.png">
+    <title>სხეულის მასის ინდექსი</title>
+</head>
+
+<body>
+    
+    <div id="grid-container" class="grid-item">
+        <div id="header" class="grid-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/3373/3373122.png" alt="">
+            <h1>სხეულის მასის ინდექსი</h1>
+        </div>
+        <div id="sidebar" class="grid-item">
+            <div id="bmi-calculator">
+                <label for="uName">სახელი</label> <br> 
+                <input type="text" id="uName" maxlength="10" required><br>
+                <label for="heightValue">სიმაღლე</label> <br>
+                <input type="number" id="heightValue" max="220" min="50" required><br>
+                <label for="weightValue">წონა</label> <br>
+                <input type="number" id="weightValue" max="300" min="20" required><br><br>
+                
+                <button id="myBtn">წავიდა</button><br>
+
+            </div>
+            <table>
+                <tr id="tr-underWeight" class="tr-class">
+                    <td>18.5ზე ნაკლები</td>
+                    <td>ძალიან გამხდარი</td>
+                </tr>
+                <tr id="tr-normalWeight" class="tr-class">
+                    <td>18.5დან 24.9მდე</td>
+                    <td>ნორმალური წონა</td>
+                </tr>
+                <tr id="tr-overWeight" class="tr-class">
+                    <td>25დან 29.9მდე</td>
+                    <td>ზედმეტი წონა</td>
+                </tr>
+                <tr id="tr-obese" class="tr-class">
+                    <td>30დან 34.9მდე</td>
+                    <td>მსუქანი</td>
+                </tr>
+                <tr id="tr-veryObese" class="tr-class">
+                    <td>35დან 39.9მდე</td>
+                    <td>ძალიან მსუქანი</td>
+                </tr>
+                <tr id="tr-extremelyObese" class="tr-class">
+                    <td>40დან ზემოთ</td>
+                    <td>სუპერ დუპერ მსუქანი</td>
+                </tr>
+            </table>
+        </div>
+        <main class="grid-item">
+            <div id="bmiResultInfo">შეიყვანე შენი მონაცემები რათა გაიგო შენი სხეულის მასის ინდექსი</div>
+        </main>
+        <div id="content-1" class="grid-item">
+            <div id="displayWeightOnMoon">აქ გამოჩნდება თუ რამდენი კილო იქნები მთვარეზე...</div>
+        </div>
+        <div id="content-2" class="grid-item">
+            <div id="displayWeightOnMars">აქ კი გამოჩნდება რამდენი კილო იქნები მარსზე...</div>
+        </div>
+        <footer class="grid-item">
+            <article id="bmi-info">სხეულის მასის ინდექსი არის შენი წონა გაყოფილი სიმაღლის კვადრატზე.
+                ნორმაზე რაც უფრო მეტია სხეულის მასის ინდექსი, მით უფრო ჭარბი წონა აქვს ადამიანს. 
+            </article>
+        </footer>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
